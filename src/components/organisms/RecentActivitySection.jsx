@@ -17,9 +17,13 @@ const RecentActivitySection = ({ recentActivity }) => {
             <ApperIcon name="Activity" className="w-8 h-8 text-gray-300 mx-auto mb-2" />
             <p className="text-sm text-gray-500">No recent activity</p>
           </div>
-        ) : (
+) : (
           recentActivity.map((activity, index) => (
-            <ActivityItem key={activity.id} activity={activity} delay={0.6 + index * 0.1} />
+            <ActivityItem 
+              key={`${activity?.id || 'unknown'}-${index}`} 
+              activity={activity} 
+              delay={0.6 + index * 0.1} 
+            />
           ))
         )}
       </div>
