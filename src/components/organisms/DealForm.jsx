@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FormField from '@/components/molecules/FormField';
+import Input from '@/components/atoms/Input';
 import Button from '@/components/atoms/Button';
 import { dealsService } from '@/services';
 import { toast } from 'react-toastify';
@@ -114,15 +115,14 @@ const DealForm = ({ onSuccess, onCancel, deal = null }) => {
           error={errors.name}
           required
         >
-          <input
+<Input
             type="text"
             value={formData.name}
             onChange={(e) => handleChange('name', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary ${
-              errors.name ? 'border-error' : 'border-gray-300'
-            }`}
+            className={errors.name ? 'border-error' : ''}
             placeholder="Enter deal name"
             aria-describedby={errors.name ? 'name-error' : undefined}
+required
           />
         </FormField>
 
@@ -131,15 +131,14 @@ const DealForm = ({ onSuccess, onCancel, deal = null }) => {
           error={errors.company}
           required
         >
-          <input
+          <Input
             type="text"
             value={formData.company}
             onChange={(e) => handleChange('company', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary ${
-              errors.company ? 'border-error' : 'border-gray-300'
-            }`}
+            className={errors.company ? 'border-error' : ''}
             placeholder="Enter company name"
             aria-describedby={errors.company ? 'company-error' : undefined}
+            required
           />
         </FormField>
       </div>
@@ -150,19 +149,17 @@ const DealForm = ({ onSuccess, onCancel, deal = null }) => {
           error={errors.value}
           required
         >
-          <input
+<Input
             type="number"
             min="0"
             step="0.01"
             value={formData.value}
             onChange={(e) => handleChange('value', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary ${
-              errors.value ? 'border-error' : 'border-gray-300'
-            }`}
+            className={errors.value ? 'border-error' : ''}
             placeholder="0.00"
             aria-describedby={errors.value ? 'value-error' : undefined}
+            required
           />
-        </FormField>
 
         <FormField
           label="Stage"
@@ -187,46 +184,40 @@ const DealForm = ({ onSuccess, onCancel, deal = null }) => {
           label="Probability (%)"
           error={errors.probability}
         >
-          <input
+<Input
             type="number"
             min="0"
             max="100"
             value={formData.probability}
             onChange={(e) => handleChange('probability', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary ${
-              errors.probability ? 'border-error' : 'border-gray-300'
-            }`}
+            className={errors.probability ? 'border-error' : ''}
             placeholder="10"
             aria-describedby={errors.probability ? 'probability-error' : undefined}
           />
-        </FormField>
 
         <FormField
           label="Expected Close Date"
           error={errors.closeDate}
           required
         >
-          <input
+<Input
             type="date"
             value={formData.closeDate}
             onChange={(e) => handleChange('closeDate', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary ${
-              errors.closeDate ? 'border-error' : 'border-gray-300'
-            }`}
+            className={errors.closeDate ? 'border-error' : ''}
             aria-describedby={errors.closeDate ? 'closeDate-error' : undefined}
+            required
           />
-        </FormField>
       </div>
 
       <FormField
         label="Deal Owner"
         error={errors.owner}
       >
-        <input
+<Input
           type="text"
           value={formData.owner}
-          onChange={(e) => handleChange('owner', e.target.value)}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+onChange={(e) => handleChange('owner', e.target.value)}
           placeholder="Enter deal owner"
         />
       </FormField>
