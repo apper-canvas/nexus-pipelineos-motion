@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "email": "sarah.johnson@techcorp.com",
+    "phone": "+1 (555) 123-4567",
+    "companyId": "1",
+    "position": "Chief Technology Officer",
+    "lastContacted": "2024-01-15T10:30:00Z",
+    "tags": ["decision-maker", "technical"]
+  },
+  {
+    "id": "2",
+    "firstName": "Michael",
+    "lastName": "Chen",
+    "email": "m.chen@healthplus.com",
+    "phone": "+1 (555) 234-5678",
+    "companyId": "2",
+    "position": "VP of Operations",
+    "lastContacted": "2024-01-12T14:20:00Z",
+    "tags": ["operations", "warm-lead"]
+  },
+  {
+    "id": "3",
+    "firstName": "Emily",
+    "lastName": "Rodriguez",
+    "email": "emily.r@financegroup.com",
+    "phone": "+1 (555) 345-6789",
+    "companyId": "3",
+    "position": "Senior Financial Analyst",
+    "lastContacted": "2024-01-10T09:15:00Z",
+    "tags": ["finance", "analytical"]
+  },
+  {
+    "id": "4",
+    "firstName": "David",
+    "lastName": "Thompson",
+    "email": "d.thompson@edutech.com",
+    "phone": "+1 (555) 456-7890",
+    "companyId": "4",
+    "position": "Product Manager",
+    "lastContacted": "2024-01-08T16:45:00Z",
+    "tags": ["product", "education"]
+  },
+  {
+    "id": "5",
+    "firstName": "Lisa",
+    "lastName": "Anderson",
+    "email": "lisa.anderson@manufacturing.com",
+    "phone": "+1 (555) 567-8901",
+    "companyId": "5",
+    "position": "Director of Procurement",
+    "lastContacted": "2024-01-05T11:30:00Z",
+    "tags": ["procurement", "decision-maker"]
+  }
+]

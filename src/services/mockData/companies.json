@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "TechCorp Solutions",
+    "industry": "Technology",
+    "size": "201-500",
+    "website": "https://techcorp.com",
+    "annualRevenue": 15000000
+  },
+  {
+    "id": "2", 
+    "name": "HealthPlus Medical",
+    "industry": "Healthcare",
+    "size": "51-200",
+    "website": "https://healthplus.com",
+    "annualRevenue": 8500000
+  },
+  {
+    "id": "3",
+    "name": "Finance Group LLC",
+    "industry": "Finance",
+    "size": "11-50",
+    "website": "https://financegroup.com",
+    "annualRevenue": 3200000
+  },
+  {
+    "id": "4",
+    "name": "EduTech Innovations",
+    "industry": "Education",
+    "size": "1-10",
+    "website": "https://edutech.com",
+    "annualRevenue": 750000
+  },
+  {
+    "id": "5",
+    "name": "Advanced Manufacturing",
+    "industry": "Manufacturing",
+    "size": "500+",
+    "website": "https://advancedmfg.com",
+    "annualRevenue": 45000000
+  }
+]

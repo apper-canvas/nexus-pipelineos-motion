@@ -1,0 +1,68 @@
+[
+  {
+    "id": "1",
+    "title": "TechCorp Enterprise Software",
+    "value": 125000,
+    "stage": "proposal",
+    "contactId": "1",
+    "companyId": "1",
+    "probability": 75,
+    "closeDate": "2024-02-15T00:00:00Z",
+    "owner": "John Doe"
+  },
+  {
+    "id": "2",
+    "title": "HealthPlus Digital Platform",
+    "value": 85000,
+    "stage": "negotiation",
+    "contactId": "2",
+    "companyId": "2",
+    "probability": 60,
+    "closeDate": "2024-02-28T00:00:00Z",
+    "owner": "Jane Smith"
+  },
+  {
+    "id": "3",
+    "title": "Finance Analytics Tool",
+    "value": 45000,
+    "stage": "qualified",
+    "contactId": "3",
+    "companyId": "3",
+    "probability": 40,
+    "closeDate": "2024-03-10T00:00:00Z",
+    "owner": "Bob Wilson"
+  },
+  {
+    "id": "4",
+    "title": "EduTech Learning Management",
+    "value": 32000,
+    "stage": "closed-won",
+    "contactId": "4",
+    "companyId": "4",
+    "probability": 100,
+    "closeDate": "2024-01-20T00:00:00Z",
+    "owner": "Alice Brown"
+  },
+  {
+    "id": "5",
+    "title": "Manufacturing ERP System",
+    "value": 180000,
+    "stage": "lead",
+    "contactId": "5",
+    "companyId": "5",
+    "probability": 20,
+    "closeDate": "2024-04-15T00:00:00Z",
+    "owner": "Charlie Davis"
+  },
+  {
+    "id": "6",
+    "title": "TechCorp Security Upgrade",
+    "value": 68000,
+    "stage": "qualified",
+    "contactId": "1",
+    "companyId": "1",
+    "probability": 45,
+    "closeDate": "2024-03-05T00:00:00Z",
+    "owner": "John Doe"
+  }
+]
