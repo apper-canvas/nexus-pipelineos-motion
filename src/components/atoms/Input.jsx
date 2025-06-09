@@ -37,9 +37,9 @@ const Input = ({
     if (min !== undefined) inputProps.min = min;
     if (max !== undefined) inputProps.max = max;
     if (step !== undefined) inputProps.step = step;
-  }
+}
   
-// Add accessibility props
+  // Add accessibility props
   if (ariaDescribedBy) inputProps['aria-describedby'] = ariaDescribedBy;
   if (required) inputProps.required = true;
 
