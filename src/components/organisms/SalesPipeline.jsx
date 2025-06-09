@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import ApperIcon from './ApperIcon';
-import Chart from 'react-apexcharts';
-import { dealsService } from '../services';
+import ApperIcon from '@/components/ApperIcon';
+import DealCard from '@/components/molecules/DealCard';
+import { dealsService } from '@/services';
 import { toast } from 'react-toastify';
 
-const MainFeature = () => {
+const SalesPipeline = () => {
   const [deals, setDeals] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,11 +20,7 @@ const MainFeature = () => {
     { id: 'closed-lost', name: 'Closed Lost', color: 'bg-error' }
   ];
 
-  useEffect(() => {
-    loadDeals();
-  }, []);
-
-  const loadDeals = async () => {
+  const loadDeals = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -36,7 +32,11 @@ const MainFeature = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    loadDeals();
+  }, [loadDeals]);
 
   const handleDragStart = (e, deal) => {
     setDraggedDeal(deal);
@@ -164,32 +164,13 @@ const MainFeature = () => {
                   onDrop={(e) => handleDrop(e, stage.id)}
                 >
                   {stageDeals.map((deal) => (
-                    <motion.div
+                    <DealCard
                       key={deal.id}
-                      draggable
-                      onDragStart={(e) => handleDragStart(e, deal)}
-                      className={`bg-gray-50 rounded-lg p-3 cursor-move border border-gray-200 hover:shadow-md transition-shadow ${
-                        draggedDeal?.id === deal.id ? 'opacity-50' : ''
-                      }`}
-                      whileHover={{ scale: 1.02 }}
-                      layout
-                    >
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-medium text-gray-900 text-sm break-words">
-                          {deal.title}
-                        </h4>
-                        <span className="text-xs text-gray-500 ml-2 flex-shrink-0">
-                          {deal.probability}%
-                        </span>
-                      </div>
-                      <div className="text-lg font-bold text-primary mb-2">
-                        {formatCurrency(deal.value)}
-                      </div>
-                      <div className="text-xs text-gray-600 space-y-1">
-                        <div>Owner: {deal.owner}</div>
-                        <div>Close: {new Date(deal.closeDate).toLocaleDateString()}</div>
-                      </div>
-                    </motion.div>
+                      deal={deal}
+                      onDragStart={handleDragStart}
+                      draggedDeal={draggedDeal}
+                      formatCurrency={formatCurrency}
+                    />
                   ))}
 
                   {stageDeals.length === 0 && (
@@ -208,4 +189,4 @@ const MainFeature = () => {
   );
 };
 
-export default MainFeature;
+export default SalesPipeline;
