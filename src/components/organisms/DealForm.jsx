@@ -122,7 +122,7 @@ const DealForm = ({ onSuccess, onCancel, deal = null }) => {
             className={errors.name ? 'border-error' : ''}
             placeholder="Enter deal name"
             aria-describedby={errors.name ? 'name-error' : undefined}
-required
+            required
           />
         </FormField>
 
@@ -220,7 +220,7 @@ required
 <Input
           type="text"
           value={formData.owner}
-onChange={(e) => handleChange('owner', e.target.value)}
+          onChange={(e) => handleChange('owner', e.target.value)}
           placeholder="Enter deal owner"
         />
       </FormField>
