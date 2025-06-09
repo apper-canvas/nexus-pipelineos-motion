@@ -160,6 +160,7 @@ required
             aria-describedby={errors.value ? 'value-error' : undefined}
             required
           />
+        </FormField>
 
         <FormField
           label="Stage"
@@ -184,7 +185,7 @@ required
           label="Probability (%)"
           error={errors.probability}
         >
-<Input
+          <Input
             type="number"
             min="0"
             max="100"
@@ -194,13 +195,14 @@ required
             placeholder="10"
             aria-describedby={errors.probability ? 'probability-error' : undefined}
           />
+        </FormField>
 
         <FormField
           label="Expected Close Date"
           error={errors.closeDate}
           required
         >
-<Input
+          <Input
             type="date"
             value={formData.closeDate}
             onChange={(e) => handleChange('closeDate', e.target.value)}
@@ -208,6 +210,7 @@ required
             aria-describedby={errors.closeDate ? 'closeDate-error' : undefined}
             required
           />
+        </FormField>
       </div>
 
       <FormField
