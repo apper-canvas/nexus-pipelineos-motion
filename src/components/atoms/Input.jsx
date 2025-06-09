@@ -43,7 +43,7 @@ const Input = ({
   if (ariaDescribedBy) inputProps['aria-describedby'] = ariaDescribedBy;
   if (required) inputProps.required = true;
 
-  return (
+return (
     <input
       type={type}
       value={safeValue}
