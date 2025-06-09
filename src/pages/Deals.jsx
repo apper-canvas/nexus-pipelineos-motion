@@ -1,7 +1,7 @@
-import MainFeature from '../components/MainFeature';
+import DealsPage from '../components/pages/DealsPage';
 
 const Deals = () => {
-  return <MainFeature />;
+  return <DealsPage />;
 };
 
 export default Deals;

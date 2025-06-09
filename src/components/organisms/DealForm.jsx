@@ -110,18 +110,19 @@ const DealForm = ({ onSuccess, onCancel, deal = null }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <FormField
+<FormField
           label="Deal Name"
           error={errors.name}
           required
         >
-<Input
+          <Input
             type="text"
             value={formData.name}
             onChange={(e) => handleChange('name', e.target.value)}
             className={errors.name ? 'border-error' : ''}
             placeholder="Enter deal name"
             aria-describedby={errors.name ? 'name-error' : undefined}
+            autoFocus
             required
           />
         </FormField>
@@ -144,12 +145,12 @@ const DealForm = ({ onSuccess, onCancel, deal = null }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <FormField
+<FormField
           label="Deal Value ($)"
           error={errors.value}
           required
         >
-<Input
+          <Input
             type="number"
             min="0"
             step="0.01"
@@ -214,10 +215,10 @@ const DealForm = ({ onSuccess, onCancel, deal = null }) => {
       </div>
 
       <FormField
-        label="Deal Owner"
+label="Deal Owner"
         error={errors.owner}
       >
-<Input
+        <Input
           type="text"
           value={formData.owner}
           onChange={(e) => handleChange('owner', e.target.value)}
