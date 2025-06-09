@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Welcome New Contact",
+    "subject": "Welcome to {{company.name}}, {{contact.firstName}}!",
+    "category": "welcome",
+    "content": "<h2>Welcome to our community!</h2><p>Hi {{contact.firstName}},</p><p>Thank you for joining {{company.name}}! We're excited to have you as part of our growing community.</p><p>Here's what you can expect from us:</p><ul><li>Regular updates on industry trends</li><li>Exclusive offers and discounts</li><li>Access to our knowledge base</li></ul><p>If you have any questions, feel free to reach out to us at {{user.email}}.</p><p>{{user.signature}}</p>",
+    "isActive": true,
+    "version": 1,
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-01-15T10:00:00Z",
+    "stats": {
+      "sent": 45,
+      "opened": 38,
+      "clicked": 12,
+      "openRate": 84.4,
+      "clickRate": 26.7
+    }
+  },
+  {
+    "id": 2,
+    "name": "Follow-up After Meeting",
+    "subject": "Thank you for the meeting - Next steps for {{deal.title}}",
+    "category": "followup",
+    "content": "<p>Hi {{contact.firstName}},</p><p>Thank you for taking the time to meet with us today. It was great discussing {{deal.title}} and understanding your needs better.</p><p>As promised, here's a summary of what we discussed:</p><ul><li>Project timeline and milestones</li><li>Budget considerations</li><li>Implementation strategy</li></ul><p>Our next steps:</p><ol><li>Prepare detailed proposal by {{date.tomorrow}}</li><li>Schedule technical review meeting</li><li>Provide cost breakdown</li></ol><p>Please let me know if you have any questions or if there's anything else I can help clarify.</p><p>{{user.signature}}</p>",
+    "isActive": true,
+    "version": 2,
+    "createdAt": "2024-01-20T14:30:00Z",
+    "updatedAt": "2024-02-01T09:15:00Z",
+    "stats": {
+      "sent": 28,
+      "opened": 25,
+      "clicked": 18,
+      "openRate": 89.3,
+      "clickRate": 64.3
+    }
+  },
+  {
+    "id": 3,
+    "name": "Proposal Submission",
+    "subject": "Proposal for {{deal.title}} - {{deal.value}}",
+    "category": "proposal",
+    "content": "<p>Dear {{contact.firstName}},</p><p>I'm pleased to submit our proposal for {{deal.title}}.</p><p><strong>Project Overview:</strong></p><p>Based on our discussions, we've prepared a comprehensive solution that addresses your specific requirements and business objectives.</p><p><strong>Investment:</strong> {{deal.value}}</p><p><strong>Timeline:</strong> We can begin implementation within two weeks of contract signing.</p><p>The attached proposal includes:</p><ul><li>Detailed project scope</li><li>Implementation timeline</li><li>Pricing breakdown</li><li>Terms and conditions</li></ul><p>I'm confident this solution will deliver the results you're looking for. I'd love to schedule a call to walk through the proposal and answer any questions you might have.</p><p>Looking forward to your feedback!</p><p>{{user.signature}}</p>",
+    "isActive": true,
+    "version": 1,
+    "createdAt": "2024-01-25T16:45:00Z",
+    "updatedAt": "2024-01-25T16:45:00Z",
+    "stats": {
+      "sent": 15,
+      "opened": 14,
+      "clicked": 11,
+      "openRate": 93.3,
+      "clickRate": 73.3
+    }
+  },
+  {
+    "id": 4,
+    "name": "Meeting Invitation",
+    "subject": "Let's schedule a meeting to discuss {{deal.title}}",
+    "category": "meeting",
+    "content": "<p>Hi {{contact.firstName}},</p><p>I hope this email finds you well. I'd like to schedule a meeting to discuss {{deal.title}} and explore how we can help {{company.name}} achieve its goals.</p><p><strong>Proposed meeting agenda:</strong></p><ul><li>Understanding your current challenges</li><li>Exploring potential solutions</li><li>Discussing timeline and next steps</li></ul><p>I have the following time slots available:</p><ul><li>{{date.tomorrow}} at 2:00 PM</li><li>Next week Tuesday at 10:00 AM</li><li>Next week Thursday at 3:00 PM</li></ul><p>Please let me know which time works best for you, or suggest alternative times if none of these work.</p><p>I'm looking forward to our conversation!</p><p>{{user.signature}}</p>",
+    "isActive": true,
+    "version": 1,
+    "createdAt": "2024-02-01T11:20:00Z",
+    "updatedAt": "2024-02-01T11:20:00Z",
+    "stats": {
+      "sent": 32,
+      "opened": 29,
+      "clicked": 21,
+      "openRate": 90.6,
+      "clickRate": 65.6
+    }
+  },
+  {
+    "id": 5,
+    "name": "Monthly Newsletter",
+    "subject": "{{company.name}} Newsletter - {{date.today}}",
+    "category": "newsletter",
+    "content": "<h1>Welcome to our monthly newsletter!</h1><p>Hi {{contact.firstName}},</p><p>Here's what's new at {{company.name}} this month:</p><h3>🎉 Company Updates</h3><ul><li>New product features launched</li><li>Team expansion announcements</li><li>Industry recognition and awards</li></ul><h3>📊 Industry Insights</h3><ul><li>Market trends analysis</li><li>Best practices and tips</li><li>Customer success stories</li></ul><h3>🚀 Upcoming Events</h3><ul><li>Webinar: Advanced CRM Strategies</li><li>Conference: Sales Excellence Summit</li><li>Workshop: Customer Retention Tactics</li></ul><p>Thank you for being part of our community. We appreciate your continued support!</p><p>{{user.signature}}</p><hr><p><small>You're receiving this email because you subscribed to our newsletter. <a href='#'>Unsubscribe</a> | <a href='#'>Update preferences</a></small></p>",
+    "isActive": true,
+    "version": 1,
+    "createdAt": "2024-02-05T08:00:00Z",
+    "updatedAt": "2024-02-05T08:00:00Z",
+    "stats": {
+      "sent": 150,
+      "opened": 98,
+      "clicked": 35,
+      "openRate": 65.3,
+      "clickRate": 23.3
+    }
+  },
+  {
+    "id": 6,
+    "name": "Invoice Reminder",
+    "subject": "Payment Reminder - Invoice {{deal.title}}",
+    "category": "invoice",
+    "content": "<p>Dear {{contact.firstName}},</p><p>I hope you're doing well. This is a friendly reminder that we have an outstanding invoice for {{deal.title}}.</p><p><strong>Invoice Details:</strong></p><ul><li>Amount: {{deal.value}}</li><li>Due Date: {{date.today}}</li><li>Payment Terms: Net 30</li></ul><p>If you've already processed this payment, please disregard this message. If you have any questions about the invoice or need to discuss payment arrangements, please don't hesitate to reach out.</p><p>You can make payment through the following methods:</p><ul><li>Online payment portal</li><li>Bank transfer</li><li>Check payment</li></ul><p>Thank you for your prompt attention to this matter.</p><p>{{user.signature}}</p>",
+    "isActive": true,
+    "version": 1,
+    "createdAt": "2024-02-10T13:30:00Z",
+    "updatedAt": "2024-02-10T13:30:00Z",
+    "stats": {
+      "sent": 8,
+      "opened": 7,
+      "clicked": 5,
+      "openRate": 87.5,
+      "clickRate": 62.5
+    }
+  }
+]

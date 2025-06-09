@@ -4,23 +4,31 @@ import CompaniesPage from '@/components/pages/CompaniesPage';
 import DealsPage from '@/components/pages/DealsPage';
 import TasksPage from '@/components/pages/TasksPage';
 import ReportsPage from '@/components/pages/ReportsPage';
-import HomePage from '@/components/pages/HomePage'; // Renamed from Home to HomePage
+import HomePage from '@/components/pages/HomePage';
+import EmailTemplatesPage from '@/components/pages/EmailTemplatesPage';
 import NotFoundPage from '@/components/pages/NotFoundPage';
 
 export const routes = {
-  dashboard: {
-    id: 'dashboard',
-    label: 'Dashboard',
+  home: {
+    id: 'home',
+    label: 'Home',
     path: '/',
-    icon: 'BarChart3',
-component: HomePage // Set root to HomePage as it has a welcoming dashboard view
+    icon: 'Home',
+    component: HomePage
   },
   dashboard: {
     id: 'dashboard',
     label: 'Dashboard',
-    path: '/dashboard', // Changed path to avoid conflict with '/'
+    path: '/dashboard',
     icon: 'BarChart3',
     component: DashboardPage
+  },
+  emailTemplates: {
+    id: 'emailTemplates',
+    label: 'Email Templates',
+    path: '/email-templates',
+    icon: 'Mail',
+    component: EmailTemplatesPage
   },
   contacts: {
     id: 'contacts',

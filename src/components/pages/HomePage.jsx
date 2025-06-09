@@ -83,10 +83,11 @@ const HomePage = () => {
     }).format(amount);
   };
 
-  const quickActions = [
+const quickActions = [
     { title: 'Add Contact', icon: 'UserPlus', action: () => navigate('/contacts'), color: 'bg-blue-500' },
     { title: 'Create Deal', icon: 'Target', action: () => navigate('/deals'), color: 'bg-success' },
     { title: 'Schedule Task', icon: 'Calendar', action: () => navigate('/tasks'), color: 'bg-warning' },
+    { title: 'Email Templates', icon: 'Mail', action: () => navigate('/email-templates'), color: 'bg-purple-500' },
     { title: 'View Reports', icon: 'BarChart3', action: () => navigate('/reports'), color: 'bg-secondary' }
   ];
 
