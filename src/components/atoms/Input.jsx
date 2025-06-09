@@ -39,11 +39,11 @@ const Input = ({
     if (step !== undefined) inputProps.step = step;
   }
   
-  // Add accessibility props
+// Add accessibility props
   if (ariaDescribedBy) inputProps['aria-describedby'] = ariaDescribedBy;
   if (required) inputProps.required = true;
 
-return (
+  return (
     <input
       type={type}
       value={safeValue}

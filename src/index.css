@@ -51,7 +51,7 @@ body {
 
 .ql-container {
   border-bottom: 1px solid #e5e7eb;
-border-left: 1px solid #e5e7eb;
+  border-left: 1px solid #e5e7eb;
   border-right: 1px solid #e5e7eb;
   border-top: none;
 }
