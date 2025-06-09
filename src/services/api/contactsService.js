@@ -52,4 +52,5 @@ const contactsService = {
   }
 };
 
+export { contactsService };
 export default contactsService;
