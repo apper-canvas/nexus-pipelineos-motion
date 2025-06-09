@@ -101,10 +101,15 @@ const DealsPage = () => {
     setSelectedDeal(null);
   };
 
-  const filteredDeals = deals.filter(deal => {
-    const matchesSearch = deal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         deal.company.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStage = filterStage === 'all' || deal.stage === filterStage;
+const filteredDeals = deals.filter(deal => {
+    // Safe string operations with null checks and default values
+    const dealName = deal?.name || '';
+    const dealCompany = deal?.company || '';
+    const dealStage = deal?.stage || '';
+    
+    const matchesSearch = dealName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         dealCompany.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesStage = filterStage === 'all' || dealStage === filterStage;
     return matchesSearch && matchesStage;
   });
 
@@ -125,9 +130,9 @@ const DealsPage = () => {
     });
   };
 
-  const totalValue = deals.reduce((sum, deal) => sum + (deal.value || 0), 0);
-  const wonDeals = deals.filter(deal => deal.stage === 'closed-won');
-  const totalWonValue = wonDeals.reduce((sum, deal) => sum + (deal.value || 0), 0);
+const totalValue = deals.reduce((sum, deal) => sum + (deal?.value || 0), 0);
+  const wonDeals = deals.filter(deal => deal?.stage === 'closed-won');
+  const totalWonValue = wonDeals.reduce((sum, deal) => sum + (deal?.value || 0), 0);
 
   if (loading) {
     return (
@@ -319,26 +324,26 @@ const DealsPage = () => {
                       transition={{ delay: index * 0.05 }}
                       className="hover:bg-gray-50"
                     >
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm font-medium text-gray-900">{deal.name}</div>
-                        <div className="text-sm text-gray-500">{deal.probability}% probability</div>
+<td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-900">{deal?.name || 'Untitled Deal'}</div>
+                        <div className="text-sm text-gray-500">{deal?.probability || 0}% probability</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {deal.company}
+                        {deal?.company || 'Unknown Company'}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {formatCurrency(deal.value)}
+                        {formatCurrency(deal?.value || 0)}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${stageColors[deal.stage]}`}>
-                          {stages.find(s => s.value === deal.stage)?.label || deal.stage}
+                        <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${stageColors[deal?.stage] || 'bg-gray-100 text-gray-800'}`}>
+                          {stages.find(s => s.value === deal?.stage)?.label || deal?.stage || 'Unknown'}
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {formatDate(deal.closeDate)}
+                        {deal?.closeDate ? formatDate(deal.closeDate) : 'No date set'}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {deal.owner}
+                        {deal?.owner || 'Unassigned'}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <div className="flex items-center justify-end space-x-2">
@@ -417,39 +422,39 @@ const DealsPage = () => {
       >
         {selectedDeal && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Deal Name</label>
-                <p className="text-sm text-gray-900">{selectedDeal.name}</p>
+                <p className="text-sm text-gray-900">{selectedDeal?.name || 'Untitled Deal'}</p>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
-                <p className="text-sm text-gray-900">{selectedDeal.company}</p>
+                <p className="text-sm text-gray-900">{selectedDeal?.company || 'Unknown Company'}</p>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Value</label>
-                <p className="text-sm text-gray-900">{formatCurrency(selectedDeal.value)}</p>
+                <p className="text-sm text-gray-900">{formatCurrency(selectedDeal?.value || 0)}</p>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Stage</label>
-                <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${stageColors[selectedDeal.stage]}`}>
-                  {stages.find(s => s.value === selectedDeal.stage)?.label || selectedDeal.stage}
+                <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${stageColors[selectedDeal?.stage] || 'bg-gray-100 text-gray-800'}`}>
+                  {stages.find(s => s.value === selectedDeal?.stage)?.label || selectedDeal?.stage || 'Unknown'}
                 </span>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Probability</label>
-                <p className="text-sm text-gray-900">{selectedDeal.probability}%</p>
+                <p className="text-sm text-gray-900">{selectedDeal?.probability || 0}%</p>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Close Date</label>
-                <p className="text-sm text-gray-900">{formatDate(selectedDeal.closeDate)}</p>
+                <p className="text-sm text-gray-900">{selectedDeal?.closeDate ? formatDate(selectedDeal.closeDate) : 'No date set'}</p>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Owner</label>
-                <p className="text-sm text-gray-900">{selectedDeal.owner}</p>
+                <p className="text-sm text-gray-900">{selectedDeal?.owner || 'Unassigned'}</p>
               </div>
             </div>
-            {selectedDeal.description && (
+            {selectedDeal?.description && (
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
                 <p className="text-sm text-gray-900">{selectedDeal.description}</p>
