@@ -25,10 +25,10 @@ body {
 }
 
 @layer utilities {
-  /* Only use scrollbar-hide for specific UI elements, never main content */
+/* Only use scrollbar-hide for specific UI elements, never main content */
   .scrollbar-hide {
     -ms-overflow-style: none;
-scrollbar-width: none;
+    scrollbar-width: none;
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
